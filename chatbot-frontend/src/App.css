@@ -1,0 +1,157 @@
+/* Chat Kutusu Tasarımı */
+.chat-container {
+  width: 400px;
+  height: 600px;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Chat Başlığı */
+.chat-header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Chat İçeriği */
+.chat-box {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Kullanıcı Mesajı */
+.message.user {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 75%;
+  margin-bottom: 5px;
+}
+
+/* Bot Mesajı */
+.message.bot {
+  background-color: #e9ecef;
+  color: black;
+  align-self: flex-start;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 75%;
+  margin-bottom: 5px;
+}
+
+/* Mesaj Giriş Kutusu */
+.input-box {
+  display: flex;
+  padding: 10px;
+  background-color: white;
+  border-top: 1px solid #ddd;
+}
+
+/* Giriş Kutusu */
+.input-box input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Gönder Butonu */
+.input-box button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.input-box button:hover {
+  background-color: #0056b3;
+}
+
+/* Yazıyor Animasyonu */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: #e9ecef;
+  max-width: 80%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background-color: #555;
+  border-radius: 50%;
+  animation: typingAnimation 1.5s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+  0% {
+      opacity: 0.3;
+      transform: translateY(0px);
+  }
+  50% {
+      opacity: 1;
+      transform: translateY(-5px);
+  }
+  100% {
+      opacity: 0.3;
+      transform: translateY(0px);
+  }
+}
+/* Önerilen Sorular Alanı */
+.suggested-questions {
+  background-color: #ffffff;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Önerilen Soru Butonları */
+.suggested-questions button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.suggested-questions button:hover {
+  background-color: #0056b3;
+}
